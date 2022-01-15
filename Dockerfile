@@ -1,4 +1,4 @@
-FROM ubuntu:20.04.3
+FROM ubuntu:20.04
 
 RUN apt-get update && apt-get install wget unzip -y &&\
     wget http://pascalabc.net/downloads/PABCNETC.zip -O /tmp/PABCNETC.zip &&\
