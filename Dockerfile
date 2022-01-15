@@ -15,5 +15,5 @@ RUN apt-get update && apt-get -qq -y install curl gnupg2 ca-certificates lsb-rel
     | tee /etc/apt/sources.list.d/nginx.list &&\
 	apt-get update &&\
     apt-get -qq -y install nginx &&\
-	apt-get -qq -y install ufw &&\
+	apt-get -qq -y install ufw
     
