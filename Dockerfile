@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install wget unzip -y &&\
     apt-get --purge remove wget unzip -y &&\
     rm -rf /var/lib/apt/lists/* /tmp/*
 	
-RUN apt install curl gnupg2 ca-certificates lsb-release ubuntu-keyring &&\
+RUN apt-get install curl gnupg2 ca-certificates lsb-release ubuntu-keyring &&\
     curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor \
     | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null &&\
 	echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] \
