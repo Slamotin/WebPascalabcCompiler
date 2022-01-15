@@ -6,4 +6,4 @@ RUN apt-get update && apt-get install wget unzip -y &&\
     rm -rf /var/lib/apt/lists/* /tmp/*
     apt-get install nginx
     ufw allow 'Nginx Full'
-	
+	mkdir -p /var/www/webcompiler/html
