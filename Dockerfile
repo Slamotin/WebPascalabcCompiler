@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:20.04.3
 
 RUN apt-get update && apt-get install wget unzip -y &&\
     wget http://pascalabc.net/downloads/PABCNETC.zip -O /tmp/PABCNETC.zip &&\
@@ -9,10 +9,10 @@ RUN apt-get update && apt-get install wget unzip -y &&\
 	
 RUN apt-get install curl gnupg2 ca-certificates lsb-release ubuntu-keyring &&\
     curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor \
-    | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null &&\
+    | tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null &&\
 	echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] \
     http://nginx.org/packages/ubuntu `lsb_release -cs` nginx" \ 
-    | sudo tee /etc/apt/sources.list.d/nginx.list &&\
+    | tee /etc/apt/sources.list.d/nginx.list &&\
 	apt-get update &&\
     apt-get install nginx &&\
     ufw allow 'Nginx Full' &&\
