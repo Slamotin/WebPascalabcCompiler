@@ -1,3 +1,5 @@
+FROM scratch
+
 RUN apt-get update && apt-get install wget unzip -y &&\
     wget http://pascalabc.net/downloads/PABCNETC.zip -O /tmp/PABCNETC.zip &&\
     mkdir /opt/pabcnetc &&\
