@@ -16,5 +16,4 @@ RUN apt-get update && apt-get -qq -y install curl gnupg2 ca-certificates lsb-rel
 	apt-get update &&\
     apt-get -qq -y install nginx &&\
 	apt-get -qq -y install ufw &&\
-    ufw allow 'Nginx Full' &&\
-	mkdir -p /var/www/webcompiler/html
+    
