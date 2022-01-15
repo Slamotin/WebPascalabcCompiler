@@ -4,6 +4,6 @@ RUN apt-get update && apt-get install wget unzip -y &&\
     unzip /tmp/PABCNETC.zip -d /opt/pabcnetc &&\
     apt-get --purge remove wget unzip -y &&\
     rm -rf /var/lib/apt/lists/* /tmp/*
-	apt-get install nginx
-	ufw allow 'Nginx Full'
+    apt-get install nginx
+    ufw allow 'Nginx Full'
 	
