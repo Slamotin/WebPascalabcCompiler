@@ -24,5 +24,5 @@ RUN mkdir -p /var/www/webcompiler/html && chown -R $USER:$USER /var/www/webcompi
 #COPY nginx.conf /etc/nginx/sites-available/webcompiler
 #COPY index.html /var/www/webcompiler/html
 COPY index.html /var/www/html
-#COPY nginxconfig/nginx.conf /etc/nginx
+COPY nginxconfig/nginx.conf /etc/nginx
 RUN service nginx restart
