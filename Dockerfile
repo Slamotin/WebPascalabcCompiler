@@ -16,8 +16,8 @@ RUN apt-get update && apt-get -qq -y install curl gnupg2 ca-certificates lsb-rel
 	apt-get -qq -y install systemd &&\
 	apt-get -qq -y install mc &&\
 	apt-get update &&\
-    apt-get -qq -y install nginx &&\
-	#apt-get -qq -y install ufw
+    apt-get -qq -y install nginx 
+	#&&\ apt-get -qq -y install ufw
 
 RUN mkdir -p /var/www/webcompiler/html && chown -R $USER:$USER /var/www/webcompiler/html && chmod -R 755 /var/www/webcompiler &&\
 	mkdir -p /etc/nginx/sites-available/webcompiler
