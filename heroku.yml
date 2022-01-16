@@ -1,6 +1,7 @@
 setup:
     addons:
-    - plan: heroku-community/nginx
+    -   plan: heroku-community/nginx
+        as: nginx
 build:
   docker:
     web: Dockerfile
