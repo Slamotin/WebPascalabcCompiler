@@ -18,6 +18,9 @@ RUN apt-get update && apt-get -qq -y install curl gnupg2 ca-certificates lsb-rel
     apt-get -qq -y install nginx &&\
 	apt-get -qq -y install ufw
 
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY index.html /usr/share/nginx/html
+RUN mkdir -p /var/www/webcompiler/html && chown -R $USER:$USER /var/www/webcompiler/html && chmod -R 755 /var/www/webcompiler &&\
+	mkdir -p /etc/nginx/sites-available/webcompiler
+COPY nginx.conf /etc/nginx/sites-available/webcompiler
+COPY index.html /var/www/webcompiler/html
+COPY nginxconfig/nginx.conf /etc/nginx
 RUN service nginx restart
