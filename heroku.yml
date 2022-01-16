@@ -5,3 +5,6 @@ setup:
 build:
   docker:
     web: Dockerfile
+  config:
+    NGINX_WORKERS: 8
+    NGINX_WORKER_CONNECTIONS: 2048
