@@ -23,8 +23,10 @@ RUN apt-get update && apt-get -qq -y install curl gnupg2 ca-certificates lsb-rel
 RUN mkdir -p /var/www/webcompiler/html && chown -R $USER:$USER /var/www/webcompiler/html && chmod -R 755 /var/www/webcompiler &&\
 	mkdir -p /etc/nginx/sites-available/webcompiler
 #COPY nginx.conf /etc/nginx/sites-available/webcompiler
-#COPY index.html /var/www/webcompiler/html
+COPY index.html /var/www/webcompiler/html
+COPY nginxconfig/default.conf /etc/nginx/conf.d
 RUN /bin/bash -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
 COPY index.html /var/www/html
-#COPY nginxconfig/nginx.conf /etc/nginx
+CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
+
 #RUN service nginx restart
