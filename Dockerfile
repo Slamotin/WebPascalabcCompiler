@@ -24,7 +24,6 @@ RUN chown -R $USER:$USER /var/www/webcompiler/html && chmod -R 755 /var/www/webc
 COPY nginx.conf /etc/nginx/
 COPY index.html /var/www/webcompiler/html
 COPY nginxconfig/default.conf /etc/nginx/conf.d
-
 COPY index.html /var/www/html
 
 #CMD /bin/bash -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
