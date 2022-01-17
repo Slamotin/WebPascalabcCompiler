@@ -1,6 +1,6 @@
 FROM nginx
 
-#COPY nginx.conf /etc/nginx/sites-available/webcompiler
+COPY nginx.conf /etc/nginx/
 COPY index.html /var/www/webcompiler/html
 COPY nginxconfig/default.conf /etc/nginx/conf.d
 
