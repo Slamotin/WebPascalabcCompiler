@@ -24,7 +24,7 @@ RUN mkdir -p /var/www/webcompiler/html && chown -R $USER:$USER /var/www/webcompi
 	mkdir -p /etc/nginx/sites-available/webcompiler
 #COPY nginx.conf /etc/nginx/sites-available/webcompiler
 #COPY index.html /var/www/webcompiler/html
-CMD /bin/bash -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
+RUN /bin/bash -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
 COPY index.html /var/www/html
 #COPY nginxconfig/nginx.conf /etc/nginx
 #RUN service nginx restart
