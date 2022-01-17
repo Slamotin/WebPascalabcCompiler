@@ -29,9 +29,9 @@ RUN apt-get update && apt-get -qq -y install curl gnupg2 ca-certificates lsb-rel
 RUN chown -R $USER:$USER /var/www/webcompiler/html && chmod -R 755 /var/www/webcompiler &&\
 	mkdir -p /etc/nginx/sites-available/webcompiler
 	
-CMD /bin/bash -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
+#CMD /bin/bash -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
 
-CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
+CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/conf.d/default.conf
 
 RUN service nginx stop
 RUN service nginx start
