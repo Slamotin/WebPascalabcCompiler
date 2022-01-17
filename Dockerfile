@@ -28,5 +28,5 @@ COPY index.html /var/www/webcompiler/html/index.html
 COPY nginxconfig/default.conf.template /etc/nginx/conf.d/default.conf.template
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY index.html /var/www/html/index.html
+RUN envport_script.sh
 
-CMD envsubst '\$PORT' </etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
