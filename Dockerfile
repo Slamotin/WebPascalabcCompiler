@@ -29,5 +29,6 @@ COPY nginxconfig/default.conf.template /etc/nginx/conf.d/default.conf.template
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY index.html /var/www/html/index.html
 COPY envport_script.sh /usr/envport_script.sh
-RUN  chmod 777 /usr/envport_script.sh && /usr/envport_script.sh
+RUN  chmod 777 /opt/envport_script.sh
+RUN /opt/envport_script.sh
 
