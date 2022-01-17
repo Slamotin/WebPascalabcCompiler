@@ -24,13 +24,11 @@ RUN mkdir -p /var/www/webcompiler/html &&\
 	chown -R www-data:www-data /var/log/nginx &&\
 	chmod -R 777 /var/log/nginx
 	
-COPY nginx.conf /etc/nginx/nginx.conf
 COPY index.html /var/www/webcompiler/html/index.html
-COPY nginxconfig/default.conf /etc/nginx/conf.d/default.conf
+COPY default.conf.template /etc/nginx/conf.d/default.conf.template
+COPY nginx.conf /etc/nginx/nginx.conf
 COPY index.html /var/www/html/index.html
 
-CMD /bin/bash -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
-
-#CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/conf.d/default.conf
+CMD /bin/bash -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
 
 RUN service nginx start
