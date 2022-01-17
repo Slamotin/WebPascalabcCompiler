@@ -30,6 +30,7 @@ RUN mkdir -p /var/www/webcompiler/html && chown -R $USER:$USER /var/www/webcompi
 	mkdir -p /etc/nginx/sites-available/webcompiler
 	
 CMD /bin/bash -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
+
 CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
 
 #RUN service nginx restart
