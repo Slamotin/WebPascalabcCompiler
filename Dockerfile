@@ -33,4 +33,4 @@ COPY index.html /var/www/html/index.html
 
 #CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/conf.d/default.conf
 
-RUN service nginx restart
+RUN service nginx start
