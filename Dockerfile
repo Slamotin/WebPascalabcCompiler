@@ -18,7 +18,9 @@ RUN apt-get update && apt-get -qq -y install curl gnupg2 ca-certificates lsb-rel
 	apt-get update
    
 
-RUN chown -R $USER:$USER /var/www/webcompiler/html && chmod -R 755 /var/www/webcompiler &&\
+RUN mkdir -p /var/www/webcompiler/html &&\
+	chown -R $USER:$USER /var/www/webcompiler/html &&\
+	chmod -R 755 /var/www/webcompiler &&\
 	mkdir -p /etc/nginx/sites-available/webcompiler
 	
 COPY nginx.conf /etc/nginx/
