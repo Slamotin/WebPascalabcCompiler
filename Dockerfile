@@ -32,3 +32,5 @@ COPY index.html /var/www/html/index.html
 #CMD /bin/bash -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
 
 #CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/conf.d/default.conf
+
+RUN service nginx restart
