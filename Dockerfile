@@ -29,4 +29,4 @@ COPY nginxconfig/default.conf.template /etc/nginx/conf.d/default.conf.template
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY index.html /var/www/html/index.html
 
-CMD /bin/bash -c envsubst '\$PORT' </etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
+CMD envsubst '\$PORT' </etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
