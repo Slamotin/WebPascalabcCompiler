@@ -22,7 +22,7 @@ RUN mkdir -p /var/www/webcompiler/html &&\
 	chown -R $USER:$USER /var/www/webcompiler/html &&\
 	chmod -R 755 /var/www/webcompiler/html &&\
 	mkdir -p /etc/nginx/sites-available/webcompiler &&\
-	chown -R www-data:www-data /var/log/nginx
+	chown -R www-data:www-data /var/log/nginx &&\
 	chmod -R 755 /var/log/nginx
 	
 COPY nginx.conf /etc/nginx/nginx.conf
