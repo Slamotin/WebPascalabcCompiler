@@ -14,7 +14,8 @@ RUN apt-get update && apt-get -qq -y install curl gnupg2 ca-certificates lsb-rel
     http://nginx.org/packages/debian `lsb_release -cs` nginx" \ 
     | tee /etc/apt/sources.list.d/nginx.list &&\
 	apt-get -qq -y install systemd &&\
-	apt-get -qq -y install mc
+	apt-get -qq -y install mc &&\
+	apt-get -qq -y install wget
    
 
 RUN mkdir -p /var/www/webcompiler/html &&\
