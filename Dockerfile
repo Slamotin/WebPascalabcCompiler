@@ -26,7 +26,8 @@ RUN mkdir -p /var/www/webcompiler/html &&\
 	
 COPY index.html /var/www/webcompiler/html/index.html
 COPY nginxconfig/default.conf.template /etc/nginx/conf.d/default.conf.template
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginxconfig/nginx.conf /etc/nginx/nginx.conf
+COPY nginxconfig/PascalWebCompiler.conf /etc/nginx/sites-enabled/PascalWebCompiler.conf
 COPY index.html /var/www/html/index.html
 COPY envport_script.sh /opt/envport_script.sh
 
