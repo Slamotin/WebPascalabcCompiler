@@ -1,1 +1,1 @@
-envsubst '\$PORT' </etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
+sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/sites-enabled/PascalWebCompiler.conf && nginx -g 'daemon off;'

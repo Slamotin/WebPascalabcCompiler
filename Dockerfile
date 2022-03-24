@@ -30,6 +30,6 @@ COPY nginxconfig/nginx.conf /etc/nginx/nginx.conf
 COPY nginxconfig/PascalWebCompiler.conf /etc/nginx/sites-enabled/PascalWebCompiler.conf
 COPY index.html /var/www/html/index.html
 COPY envport_script.sh /opt/envport_script.sh
-CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/sites-enabled/PascalWebCompiler.conf && nginx -g 'daemon off;'
+CMD /opt/envport_script.sh
 
 
