@@ -25,7 +25,7 @@ RUN mkdir -p /var/www/webcompiler/html &&\
 	chown -R www-data:www-data /var/log/nginx &&\
 	chmod -R 777 /var/log/nginx
 	
-COPY /html /var/www/webcompiler/
+COPY /html /var/www/webcompiler/html
 COPY nginxconfig/default.conf.template /etc/nginx/conf.d/default.conf.template
 COPY nginxconfig/nginx.conf /etc/nginx/nginx.conf
 COPY nginxconfig/PascalWebCompiler.conf /etc/nginx/conf.d/default.conf
