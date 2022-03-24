@@ -1,5 +1,5 @@
 const WebSocket = require('ws');
-const wsServer = new WebSocket.Server({ port: 9000, 'Access-Control-Allow-Origin': "*" });
+const wsServer = new WebSocket.Server({ port: $PORT, 'Access-Control-Allow-Origin': "*" });
 
 wsServer.on('connection', onConnect);
 
