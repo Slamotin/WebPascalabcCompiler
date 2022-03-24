@@ -31,6 +31,8 @@ COPY nginxconfig/PascalWebCompiler.conf /etc/nginx/conf.d/default.conf
 COPY nginxconfig/PascalWebCompiler.conf /etc/nginx/sites-enabled/PascalWebCompiler.conf
 COPY index.html /var/www/html/index.html
 CMD chmod -R 777 /etc/nginx/sites-enabled/PascalWebCompiler.conf &&\
-sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/sites-enabled/PascalWebCompiler.conf && nginx -g 'daemon off;'
+chmod -R 777 /etc/nginx/conf.d/default.conf &&\
+sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/sites-enabled/PascalWebCompiler.conf && nginx -g 'daemon off;' &&\
+sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
 
 
