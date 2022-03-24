@@ -29,6 +29,6 @@ COPY nginxconfig/default.conf.template /etc/nginx/conf.d/default.conf.template
 COPY nginxconfig/nginx.conf /etc/nginx/nginx.conf
 COPY nginxconfig/PascalWebCompiler.conf /etc/nginx/sites-enabled/PascalWebCompiler.conf
 COPY index.html /var/www/html/index.html
-CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
+CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/sites-enabled/PascalWebCompiler.conf && nginx -g 'daemon off;'
 
 
