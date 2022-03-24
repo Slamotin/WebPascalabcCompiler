@@ -1,0 +1,14 @@
+{
+  "requires": true,
+  "lockfileVersion": 1,
+  "dependencies": {
+    "http": "0.0.1-security",
+    "https": {
+      "integrity": "sha1-PDfHrhqO65ZpBKKtHpdaGUt+06Q=",
+      "resolved": "https://registry.npmjs.org/https/-/https-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "ws": "^8.4.2",
+    "wss": "^3.3.4"
+  }
+}
